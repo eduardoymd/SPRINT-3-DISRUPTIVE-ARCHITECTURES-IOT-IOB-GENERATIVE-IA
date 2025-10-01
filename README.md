@@ -143,5 +143,34 @@ project_root/
 [Corrida de motos Mottu](https://youtube.com/shorts/dKT6E-Xx_LU?feature=share)<br>
 [Centro de produção Mottu](https://youtube.com/shorts/VJPWDe5eUhw?feature=share)
 
+# API de Upload e Processamento de Vídeos com YOLOv8
 
+Esta parte do projeto implementa uma API simples usando **FastAPI** que permite enviar vídeos para detecção ou segmentação de motocicletas com **YOLOv8** diretamente pelo navegador.
+
+---
+
+## Funcionalidades
+
+- Formulário web para upload de vídeos `.mp4` ou `.avi`.
+- Processamento do vídeo usando o modelo YOLOv8 treinado.
+- Salva o vídeo enviado na pasta `videos_output`.
+- Mostra o vídeo processado (com detecção/segmentação) na tela durante a execução do modelo.
+
+---
+
+## Requisitos
+
+- Python 3.9+
+- Pacotes Python:
+
+```bash
+pip install fastapi uvicorn ultralytics python-multipart
+```
+### Como Rodar
+- Execute o servidor FastAPI
+```uvicorn app:app --reload```
+- Abra o navegador em:
+```http://127.0.0.1:8000/```
+- Use o formulário para selecionar e enviar um video.
+- O vídeo será processado pelo YOLOv8, e a saída será salva na pasta videos_output.
 
